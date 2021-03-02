@@ -1,3 +1,4 @@
 {
-    "mongoURI" : "mongodb+srv://admin-manav:Teach451@cluster0.tqkkz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI" : "mongodb+srv://admin-manav:Teach451@cluster0.tqkkz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret" : "mysecrettoken"
 }
