@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const config = require("config");
 const auth = require("../../middleware/auth");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
@@ -36,13 +36,9 @@ router.get("/me", auth, async (req, res) => {
 // @access      Private
 router.post(
   "/",
-  [
-    auth,
-    [
-      check("status", "Status is required").not().isEmpty(),
-      check("skills", "Skills is required").not().isEmpty(),
-    ],
-  ],
+  auth,
+  check("status", "Status is required").not().isEmpty(),
+  check("skills", "Skills is required").not().isEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -86,23 +82,11 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = await Profile.findOne({ user: req.user.id });
-
-      if (profile) {
-        profile = await Profile.findOneAndUpdate(
-          req.user.id,
-          { $set: profileFields },
-          { new: true, useFindAndModify: false }
-        );
-        console.log(profile);
-        return res.json(profile);
-      }
-
-      // Create
-      profile = new Profile(profileFields);
-
-      console.log(profile);
-      await profile.save();
+      let profile = await Profile.findOneAndUpdate(
+        { user: req.user.id },
+        { $set: profileFields },
+        { new: true, upsert: true, setDefaultsOnInsert: true }
+      );
       return res.json(profile);
     } catch (err) {
       console.log(err);

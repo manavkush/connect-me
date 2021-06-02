@@ -17,7 +17,6 @@ const initialState = {
 
 export const auth = (state = initialState, action) => {
   const { type, payload } = action;
-  console.log(payload);
   switch (type) {
     case USER_LOADED:
       return {
