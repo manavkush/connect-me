@@ -1,2 +1,2 @@
-# dev-connector
+# Connect-Me
 MERN Stack Project. Social media site for devs.
