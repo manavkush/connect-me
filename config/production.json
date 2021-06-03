@@ -1,0 +1,6 @@
+{
+    "mongoURI" : "mongodb+srv://admin-manav:Teach451@cluster0.tqkkz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret" : "mysecrettoken",
+    "githubClientID" : "92d75ef02efded86a507",
+    "githubSecret" : "43d4f507e1c8fb1715a93fbb3e0a8fc051f61fe5"
+}
