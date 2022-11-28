@@ -25,8 +25,8 @@ export const getCurrentProfile = () => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -46,8 +46,8 @@ export const getProfiles = () => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -67,8 +67,8 @@ export const getProfileById = (userId) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -87,8 +87,8 @@ export const getGithubRepos = (username) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -128,8 +128,8 @@ export const createProfile =
       dispatch({
         type: PROFILE_ERROR,
         payload: {
-          msg: error.response.statusText,
-          status: error.response.status,
+          msg: error.response ? error.response.statusText : null,
+          status: error.response ? error.response.status: null,
         },
       });
     }
@@ -163,8 +163,8 @@ export const addExperience = (formData, history) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -198,8 +198,8 @@ export const addEducation = (formData, history) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -226,8 +226,8 @@ export const deleteExperience = (id) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -254,8 +254,8 @@ export const deleteEducation = (id) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: error.response ? error.response.statusText : null,
+        status: error.response ? error.response.status: null,
       },
     });
   }
@@ -286,8 +286,8 @@ export const deleteAccount = (id) => async (dispatch) => {
       dispatch({
         type: PROFILE_ERROR,
         payload: {
-          msg: error.response.statusText,
-          status: error.response.status,
+          msg: error.response ? error.response.statusText : null,
+          status: error.response ? error.response.status: null,
         },
       });
     }
